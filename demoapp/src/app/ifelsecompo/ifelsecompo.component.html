@@ -1,0 +1,29 @@
+<h1>    if-else  </h1>
+ 
+@if(dispaly1){
+    <div 
+style="height: 70px; width: 70px; background-color: rgb(211, 255, 196); " >
+
+</div> 
+}
+<button (click)="hide()">hide</button>
+<button (click)="show19()">showw</button>
+<button (click)="toggle()">Toggle</button>
+
+
+
+@if(xy>10){
+    <div style="background-color: blueviolet ; height: 77px; width: 77px;"></div>
+}
+
+<hr>
+<hr>
+
+    <div style="background-color: chartreuse ; height: 77px; width: 77px;"></div>
+<button (click)="toggledivv()" >{{togglediv?'SHOW chartreuse TEXT ':' SHOW BLUE TEXT '}}</button>
+@if(togglediv){
+    <div style="background-color: chartreuse ; height: 77px; width: 77px;"></div>
+}
+@else{
+    <div style="background-color: cadetblue ; height: 77px; width: 77px;"></div>
+}

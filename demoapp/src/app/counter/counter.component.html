@@ -1,0 +1,56 @@
+<h1>counter App</h1>
+<input type="text" (input)="getname($event)" value="{{name}}" placeholder="Enter user name">
+<br>
+<button (click)="showname()">Enter</button>
+<p>You entered: {{ showname1 }}</p>
+<button (click)="setname()">setname1</button><br>
+<input type="email" value="{{email}}" placeholder="enter email" #emailfield>
+<br>
+<button (click)="getemail(emailfield.value)">get email</button>
+<button (click)="setemail()">set email</button>
+
+<div class="counter-container">
+    <h2 class="counter-display">{{count}}</h2>
+</div>
+<div class="button-container">
+    <button class="decrement-btn" (click)="decrement()" >decrement</button>
+    <button class="reset-btn" (click)="reset()">reset</button>
+    <button class="increment-btn" (click)="increment()">increment</button>
+</div>
+{{count}}
+
+<button class="btbt" (click)="clickme($event)">clickclick</button>
+
+<br>
+<br>
+
+<div (click)="clickme($event)"  style="background-color: aqua; height: 20px; width: 20px;"></div><br>
+
+<div (mouseenter)="clickme($event)" style="background-color: aqua; height: 20px; width: 20px;"></div><br>
+
+<div (mouseleave)="clickme($event)" style="background-color: blueviolet; height: 20px; width: 20px;"></div>
+
+<br>
+<input (focus)="clickme($event)" 
+        (blur)="clickme($event) "
+type="text">
+<div style="            width: 200px; 
+height: 100px;
+background-color: lightblue;
+text-align: center;
+line-height: 100px; 
+font-size: 18px;
+font-weight: bold;
+border-radius: 10px;">
+
+</div><br><br><br>
+<div style="            width: 200px; 
+height: 100px;
+background-color: lightblue;
+text-align: center;
+line-height: 100px; 
+font-size: 18px;
+font-weight: bold;
+border-radius: 10px;">
+
+</div>

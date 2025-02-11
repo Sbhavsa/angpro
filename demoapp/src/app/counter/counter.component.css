@@ -1,0 +1,44 @@
+.counter-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .counter-display {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .decrement-btn {
+    background-color: red;
+    color: white;
+  }
+  
+  .reset-btn {
+    background-color: gray;
+    color: white;
+  }
+  
+  .increment-btn {
+    background-color: green;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
