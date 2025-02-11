@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row align-items-center">
         <!-- Logo Section -->
-        <div class="col-md-3 col-sm-3 col-3">
-          <a href="" class="logo">
+        <div class="col-md-3 col-sm-3 col-3 text-start">
+          <a routerLink="/" class="logo">
             <img src="SamudraLogo.png" alt="Company Logo" class="img-fluid">
           </a>
         </div>
@@ -18,10 +18,10 @@
           </div>
          <div class="menu" [class.menuclass]="menuvariable" >  
           <ul>
-            <li><a  routerLink="/home" (click)="closeMenu()">home</a></li>
-            <li><a routerLink="/about" (click)="closeMenu()">about</a></li>
-            <li><a  routerLink="/services" (click)="closeMenu()">services</a></li>
-            <li><a routerLink="/contact" (click)="closeMenu()">contact</a></li>
+            <li><a  routerLink="/home" routerLinkActive="active" (click)="closeMenu()">home</a></li>
+            <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">about</a></li>
+            <li><a  routerLink="/Services" routerLinkActive="active" (click)="closeMenu()">services</a></li>
+            <li><a routerLink="/Contact" routerLinkActive="active" (click)="closeMenu()">contact</a></li>
           </ul>
          </div>
         </div>
