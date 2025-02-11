@@ -1,0 +1,31 @@
+
+<header class="header">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Logo Section -->
+        <div class="col-md-3 col-sm-3 col-3">
+          <a href="" class="logo">
+            <img src="SamudraLogo.png" alt="Company Logo" class="img-fluid">
+          </a>
+        </div>
+  
+        <!-- Navigation Section -->
+        <div class="col-md-9 col-sm-9 col-9 text-end">
+          <div class="menu_icon" [class.menu_icon_class]="menuiconvariable" (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+         <div class="menu" [class.menuclass]="menuvariable" >  
+          <ul>
+            <li><a  routerLink="/home" (click)="closeMenu()">home</a></li>
+            <li><a routerLink="/about" (click)="closeMenu()">about</a></li>
+            <li><a  routerLink="/services" (click)="closeMenu()">services</a></li>
+            <li><a routerLink="/contact" (click)="closeMenu()">contact</a></li>
+          </ul>
+         </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
