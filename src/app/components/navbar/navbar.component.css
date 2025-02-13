@@ -1,109 +1,196 @@
 .header {
-    background: #9c8686;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-  }
-  .menu{
-    margin: 12px 0px;
-  }
-  .menu ul{
-    padding: 0;
-    margin: 0;
+  background: #9c8686;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
 
-  }
-  li {
-    list-style-type: none;
-    display: inline-block;
-   
-  }
-  li:hover{
-    color:#e7b1b1 ;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
-  }
-  a{
-    color: black;
-    text-decoration:none;
-    font-size: 20px;  
-    margin-left: 24px;  
-    font-weight: 500;
-  }
+}
+
+.menu {
+  margin: 12px 0px;
+}
+
+.menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
  
-  @media only screen and (max-width: 999px){
-    .menu{
+  
+  
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+a {
+  color: #2a2424;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 24px;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #e7b1b1;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.logo{
+ 
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+/* Tablets (Between 600px and 999px) */
+@media only screen and (max-width: 999px) {
+  
+  .menu {
       position: fixed;
-      right:-200px ;
+      right: -200px;
       top: 38px;
       width: 180px;
-      height: 200px;
-      background-color:#9c8686;
+      height: 203px;
+      background-color: #9c8686;
       transition: 0.4s ease-in-out;
-    }
-    .menu ul li{
+      z-index: 100;
 
+  }
+
+  .menu ul li {
       display: block;
       text-align: left;
       margin: 0;
       padding: 15px 0 5px 22px;
-      border-bottom: 1px solid #6a6363 ;
-    }
-    .menu_icon:hover{
-      cursor: pointer;
-    }
-    .menu_icon {
-      display: inline-block;
-      position: relative;
-      right: 0;
-      top: 5px;
-      cursor: pointer;
+      border-bottom: 1px solid #6a6363;
+  }
 
-      
-    }
-    .menu_icon span{
+  .menu_icon {
+      display: inline-block;
+      right: 0;
+      cursor: pointer;
+  }
+
+  .menu_icon:hover {
+      cursor: pointer;
+  }
+
+  .menu_icon span {
       width: 32px;
       height: 3px;
       background: white;
       display: block;
       transition: 0.4s ease-in-out;
+  }
 
-    }
-    .menu_icon span:nth-child(2){
+  .menu_icon span:nth-child(2) {
       margin: 4px 0;
+  }
 
-    }
-     .menu_icon_class span:nth-child(2){
+  .menu_icon_class span:nth-child(2) {
       display: none;
-    }
-    .menu_icon_class span:nth-child(1){
+  }
+
+  .menu_icon_class span:nth-child(1) {
       transform: rotate(40deg);
-    }
-    .menu_icon_class span:nth-child(3){
+  }
+
+  .menu_icon_class span:nth-child(3) {
       transform: rotate(-40deg);
       margin-top: -3px;
-    }
+  }
 
-    .menuclass{
-      right :0;
+  .menuclass {
+      right: 0;
       transition: 0.2s ease-in-out;
-
-    }
-
-    
-
   }
-  
+}
+
+/* Mobile Phones (Below 600px) */
+@media only screen and (max-width: 600px) {
+
+  .menu {
+      position: fixed;
+      right: -200px;
+      width: 200px;
+      height: auto;
+      background-color: #9c8686;
+      transition: 0.3s ease-in-out;
+      text-align: left;
+      padding: 10px;
+      top: 39px;
+      z-index: 100;
+  }
+  .menu_icon span:nth-child(2) {
+    margin: 4px 0;
+}
+
+.menu_icon_class span:nth-child(2) {
+    display: none;
+}
+
+.menu_icon_class span:nth-child(1) {
+  transform: rotate(45deg);
+ 
+
+}
+
+.menu_icon_class span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -8px;
+}
+
+  .menu ul {
+      display: block;
+      padding: 0;
+  }
+
+  .menu ul li {
+      display: block;
+      padding: 10px 15px;
+      border-bottom: 1px solid #6a6363;
+  }
+
+  .menu_icon {
+      display: block;
+    
+      right: 15px;
+      top: 10px;
+      cursor: pointer;
+  }
+
+  .menu_icon span {
+      width: 30px;
+      height: 3px;
+      background: white;
+      display: block;
+      transition: 0.4s;
+  }
+
   .logo img {
-    max-height: 50px;
-    
+      max-height: 40px;
   }
-  
-  
-  
-  
-  .navbar-nav .nav-link:hover {
-    color: #e7b1b1;
-    ;
-  }
-  
 
-  
+  /* When menu is opened */
+  .menuclass {
+      right: 0;
+      transition: 0.3s ease-in-out;
+  }
+}

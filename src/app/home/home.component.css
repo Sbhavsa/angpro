@@ -1,0 +1,29 @@
+.maindiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Set main div as reference */
+}
+
+.inner-div {
+    width: 100%;
+    position: relative; /* Acts as a reference for absolute positioning */
+}
+.inner-div img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    display: block;
+}
+.backimg{
+    position: relative;
+}
+
+.bottom-image {
+    width: 100%;
+    position: absolute; /* Position it on top of the first image */
+ 
+    left: 0;
+    top:25%;
+}
