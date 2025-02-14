@@ -1,0 +1,32 @@
+<!-- <section class="services-container">
+    <h1 class="section-title">Services</h1>
+    <div class="services-grid">
+      <div *ngFor="let service of services; let i = index" class="service-card">
+        <div class="service-content">
+          <h1>{{ service.title }}</h1>
+          <p>{{ service.description }}</p>
+          <div class="learn-more">
+            <mat-icon>arrow_right_alt</mat-icon>
+            <a [href]="service.link">LEARN MORE</a>
+          </div>
+          <div class="icon-container">
+            <span class="material-symbols-outlined">{{ service.icon }}</span>
+          </div>
+        </div>
+        <span class="service-number">{{ ('0' + (i + 1)) }}</span>
+      </div>
+    </div>
+  </section>
+   -->
+
+   <section class="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-container">
+      <div class="service-card" *ngFor="let service of services">
+        <fa-icon [icon]="service.icon" class="service-icon"></fa-icon>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </section>
+  
