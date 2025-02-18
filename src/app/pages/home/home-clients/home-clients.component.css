@@ -1,0 +1,95 @@
+/* If you're using TailwindCSS, these utility classes will already work */
+.flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .bg-\[\#8FBFE2\] {
+    background-color: #8FBFE2;
+  }
+  
+  .text-black {
+    color: black;
+  }
+  
+  .md\:gap-28 {
+    gap: 7rem; /* Tailwind’s gap between items on medium screens */
+  }
+  
+  .gap-4 {
+    gap: 1rem;  /* Gap between items for smaller screens */
+  }
+  
+  .p-10 {
+    padding: 2.5rem;
+  }
+  
+  .basis-1\/3 {
+    flex-basis: 33.33%;
+  }
+  
+  .space-y-4 {
+    margin-bottom: 1rem; /* Space between child elements in a flex container */
+  }
+  
+  .text-7xl {
+    font-size: 4rem; /* For larger text */
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem; /* For smaller text */
+  }
+  
+  @media (max-width: 768px) {
+    .flex {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .md\:flex-row {
+      flex-direction: column; /* Override row direction for mobile */
+    }
+  
+    .md\:gap-28 {
+      gap: 1.5rem; /* Reduce gap for better spacing on mobile */
+    }
+  
+    .p-10 {
+      padding: 1.5rem; /* Reduce padding for smaller screens */
+    }
+  
+    .basis-1\/3 {
+      flex-basis: 100%; /* Make items take full width on mobile */
+    }
+  
+    .text-7xl {
+      font-size: 2.5rem; /* Reduce large text size for better readability */
+    }
+  
+    .text-2xl {
+      font-size: 1.25rem; /* Adjust smaller text size */
+    }
+  
+    .space-y-4 {
+      margin-bottom: 0.5rem; /* Reduce space between child elements */
+    }
+  }
+  

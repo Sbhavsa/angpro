@@ -5,12 +5,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky; /* This makes the navbar sticky */
+  top: 0; /* Stick to the top */
+  padding: 10px 0;  /* Padding to give space to the navbar */
+  z-index: 1000;
+  
 }
 .container{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px;
+  padding: 8px 20px;
+  
 
 }
 
@@ -65,12 +71,13 @@ a:hover {
   .menu {
       position: fixed;
       right: -200px;
-      top: 38px;
+    
       width: 180px;
       height: 203px;
       background-color: #9c8686;
       transition: 0.4s ease-in-out;
       z-index: 100;
+      top: 50px; 
 
   }
 

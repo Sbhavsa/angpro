@@ -1,0 +1,138 @@
+
+.wp-block-motive-section {
+    background-color: #9c8686;
+    color: whitesmoke;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .content-header {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+  }
+  
+  .logo-wrapper {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+  }
+
+  
+  .features-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features-list li {
+    margin: 5px 0;
+    
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select ,
+  .form-group textarea {
+    width: 600px;
+    padding: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #30041C;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .thank-you-message {
+    margin-top: 20px;
+    background: #222;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 489px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .logo-wrapper, 
+    .content-header {
+      flex: none;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .btn-primary {
+      width: 100%;
+      max-width: 200px;
+    }
+    .features-list {
+        padding: 0;
+        text-align: center;
+      }
+    
+      .features-list li {
+        margin: 8px 0;
+        font-size: 14px; /* Adjust font size for better readability */
+      }
+  }
+
+ 
+  
+  /* home-contact.component.css */
+input:focus {
+    border-color: #3498db; /* Change border color on focus */
+  }
+  
+  input:focus + .error-message {
+    display: block; /* Show the error message when the input is focused */
+  }
+  
+  .error-message {
+    display: none; /* Hide the error message by default */
+    color: red;
+    font-size: 12px;
+  }
+  
+  input:invalid:focus + .error-message {
+    display: block; /* Show error when the input is focused and invalid */
+  }
+  
+
+  
+  input.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched {
+    border-color: red;  /* Highlight invalid inputs */
+  }
+  

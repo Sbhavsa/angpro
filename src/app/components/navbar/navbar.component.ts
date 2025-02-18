@@ -1,13 +1,21 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+
 import { RouterModule } from '@angular/router';  // Import RouterModule
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
+
+
+
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,  // Indicate that this is a standalone component (if applicable)
-  imports: [RouterModule, NgClass],  // Include RouterModule here
+  standalone: true,  
+  imports: [RouterModule, NgClass ,MatMenuModule, MatButtonModule, MatIconModule ],  
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']  // Correct property name: styleUrls (plural)
+  styleUrls: ['./navbar.component.css']  
 })
 export class NavbarComponent {
   menuvariable: boolean = false;

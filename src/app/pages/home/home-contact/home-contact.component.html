@@ -1,0 +1,89 @@
+<section class="wp-block-motive-section mt-024-v1 has-phoenix-black-background-color has-background">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="content-header">
+      <h2>CONNECT WITH US</h2>
+      <br><br><br>
+      <p>
+        <fa-icon [icon]="faLocation" class="me-2"></fa-icon> OUR OFFICE ADDRESS
+      </p>
+
+      <ul class="features-list">
+        <li><fa-icon [icon]="faOffice"></fa-icon> &nbsp; Head Office:</li>
+        <li>3rd Floor, "SAMUDRA", Suresh Mehta Chawk, Ambica Nagar Road, Palanpur. 385 001. Banaskantha. Gujarat. India.</li>
+        <li><fa-icon [icon]="faBriefcaseIcon"></fa-icon> &nbsp; Branch Office:</li>
+        <li>210 - i-Square , Nr. CIMS Hospital Circle, Science City Road, Sola, Ahmedabad-380060.</li>
+      </ul>
+    </div>
+
+    <!-- Contact Form -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" required>
+        <!-- Show error message if required field is touched and empty -->
+        <span *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')" class="error-message">
+          This is a required field
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" required>
+        <!-- Show error message if email is required and touched -->
+        <span *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')" class="error-message">
+          This is a required field
+        </span>
+        <span *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('email')" class="error-message">
+          Please enter a valid email
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" formControlName="phone" required>
+        <!-- Show error message if phone number is required and touched -->
+        <span *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.hasError('required')" class="error-message">
+          This is a required field
+        </span>
+        <span *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.hasError('pattern')" class="error-message">
+          Please enter a valid phone number (e.g., 123-456-7890)
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input id="city" type="text" formControlName="city" required>
+        <!-- Show error message if city is required and touched -->
+        <span *ngIf="contactForm.get('city')?.touched && contactForm.get('city')?.hasError('required')" class="error-message">
+          This is a required field
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input id="state" type="text" formControlName="state" required>
+        <!-- Show error message if state is required and touched -->
+        <span *ngIf="contactForm.get('state')?.touched && contactForm.get('state')?.hasError('required')" class="error-message">
+          This is a required field
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea rows="4" formControlName="message" required></textarea>
+        <!-- Show error message if message is required and touched -->
+        <span *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')" class="error-message">
+          This is a required field
+        </span>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <div class="thank-you-message" *ngIf="formSubmitted">
+      <h4>Thank you!</h4>
+      <p>We’ll be reaching out within one business day.</p>
+    </div>
+  </div>
+</section>

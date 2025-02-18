@@ -1,32 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-clients',
-  imports: [],
   templateUrl: './home-clients.component.html',
-  styleUrl: './home-clients.component.css'
+  styleUrls: ['./home-clients.component.css']
 })
-export class HomeClientsComponent {
-  clients = [
-    { name: 'Teksystems', image: 'https://ngstek.com/images/clients/teksystems.jpg' },
-    { name: 'Insight Global', image: 'https://ngstek.com/images/clients/insight-global.jpg' },
-    { name: 'Doozer', image: 'https://ngstek.com/images/clients/doozer.jpg' },
-    { name: 'Hexaware', image: 'https://ngstek.com/images/clients/hexaware.jpg' },
-    { name: 'INT Technologies', image: 'https://ngstek.com/images/clients/int-technologies.jpg' },
-    { name: 'Judge', image: 'https://ngstek.com/images/clients/judge.jpg' },
-    { name: 'Syntel', image: 'https://ngstek.com/images/clients/syntel.jpg' }
-  ];
+export class HomeClientsComponent implements OnInit {
+  installationCount = 0;
+  happyCustomers = 0;
+  statesCovered = 0;
 
-  carouselOptions = {
-    loop: true,
-    margin: 10,
-    nav: true,
-    dots: true,
-    responsive: {
-      0: { items: 1 },
-      600: { items: 3 },
-      1000: { items: 5 }
-    }
-  };
+  finalInstallationCount = 3000;
+  finalHappyCustomers = 200;
+  finalStatesCovered = 10;
 
+  ngOnInit() {
+    this.animateCount('installationCount', this.finalInstallationCount, 2000);
+    this.animateCount('happyCustomers', this.finalHappyCustomers, 2000);
+    this.animateCount('statesCovered', this.finalStatesCovered, 2000);
+  }
+
+  animateCount(property: keyof HomeClientsComponent, target: number, duration: number) {
+    let stepTime = Math.max(Math.floor(duration / target), 10); // Prevent division by zero
+    let currentCount = 0;
+
+    let interval = setInterval(() => {
+      if (currentCount >= target) {
+        (this as any)[property] = target; 
+        clearInterval(interval);
+      } else {
+        currentCount++;
+        (this as any)[property] = currentCount; 
+      }
+    }, stepTime);
+  }
 }
