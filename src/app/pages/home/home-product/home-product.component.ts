@@ -1,33 +1,56 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { filter } from 'rxjs/operators';
 
 import { isPlatformBrowser } from '@angular/common';
 import {  AfterViewInit ,Inject, PLATFORM_ID} from '@angular/core';
 import { link } from 'fs';
+import { NavbarComponent } from '../../../components/navbar/navbar.component';
+import { FooterComponent } from '../../../components/footer/footer.component';
+import { SoftwareproComponent } from './softwarepro/softwarepro.component';
+import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
+import { HardwareproComponent } from './hardwarepro/hardwarepro.component';
 
 
 
 @Component({
   selector: 'app-home-product',
-  imports: [CommonModule],
+  imports: [CommonModule,SoftwareproComponent,RouterModule,HardwareproComponent],
   templateUrl: './home-product.component.html',
   styleUrl: './home-product.component.css'
 })
 export class HomeProductComponent {
- 
   slides = [
     {
       title: 'Software and Solution',
-      backgroundImage: 'url("software.jpg")', 
-       link: '#'
+      backgroundImage: 'url("software.jpg")' , 
+       link: '/product/softwarepro'
 
     },
     {
       title: 'hardware and Solution',
       backgroundImage: 'url("flat-computer-engineering-concept_23-2148154728.avif")' , 
-       link: '#'
+       link: 'product/hardwarepro'
     }
   ];
+  showCarousel: boolean = true;  // Control visibility of carousel
+
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.router.events.subscribe(() => {
+      // Hide the carousel if a child route is active
+      this.showCarousel = !this.route.firstChild;
+    });
+  }
+
+  onclick(route:any){
+    console.log("i am call");
+    
+    this.showCarousel = false;
+    this.router.navigate([`${route}`])
+  }
+
 
   
   ngAfterViewInit() {
@@ -55,3 +78,4 @@ export class HomeProductComponent {
     // });
   }
 }
+

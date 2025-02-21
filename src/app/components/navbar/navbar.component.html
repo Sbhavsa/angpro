@@ -1,33 +1,118 @@
-
+<!-- Updated HTML Structure -->
 <header class="header">
-    <div class="container">
-    
-        <!-- Logo Section -->
-        <div class="logo">
-          <a routerLink="/" >
-            <img src="Samudra1.png" alt="Company Logo" class="img-fluid">
-          </a>
-        </div>
-  
-        <!-- Navigation Section -->
-        <div class="menu_right">
-          <div class="menu_icon" [class.menu_icon_class]="menuiconvariable" (click)="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-         <div class="menu" [class.menuclass]="menuvariable" >  
-          <ul>
-            <li><a  routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
-            <li><a routerLink="/product" routerLinkActive="active" (click)="closeMenu()">product</a></li>
-            <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
-            <li><a  routerLink="/Services" routerLinkActive="active" (click)="closeMenu()">Services</a></li>
-            <li><a routerLink="/Contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
-          </ul>
-         </div>
-        </div>
-
-     
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <a routerLink="/">
+        <img src="Samudra1.png" alt="Company Logo" class="img-fluid">
+      </a>
     </div>
-  </header>
-  
+
+    <!-- Navigation Section -->
+    <div class="menu_right">
+      <div class="menu_icon" [class.menu_icon_class]="menuiconvariable" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu" [class.menuclass]="menuvariable">
+        <ul>
+          <li>
+            <button routerLink="/home" routerLinkActive="active" (click)="closeMenu()" mat-button style="color: #e7b1b1;">
+              <i class="fas fa-home"></i> &nbsp;Home
+            </button>
+          </li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="productMenu" style="color: #e7b1b1; text-size-adjust: initial;">
+              <i class="fas fa-box"></i> &nbsp;Product
+            </button>
+            <mat-menu #productMenu="matMenu" panelClass="custom-menu-width" backdropClass="custom-menu-background">
+              <button mat-menu-item [matMenuTriggerFor]="softwareMenu">
+                <i class="fas fa-laptop-code"></i> &nbsp;Software & Solutions 
+              </button>
+              <button mat-menu-item [matMenuTriggerFor]="hardwareMenu">
+                <i class="fas fa-microchip"></i> &nbsp;Hardware & Solutions
+              </button>
+            </mat-menu>
+          </li>
+          <mat-menu #softwareMenu="matMenu" panelClass="custom-menu-width">
+            <button mat-menu-item routerLink="rtoms" routerLinkActive="active" (click)="closeMenu()">
+              <i class="fas fa-network-wired"></i> &nbsp;RTOMS
+            </button>
+            <button mat-menu-item routerLink="/product/software/amcd" routerLinkActive="active" (click)="closeMenu()">
+              <i class="fas fa-cogs"></i> &nbsp;Software AMCD
+            </button>
+            <button mat-menu-item routerLink="/product/software/smps" routerLinkActive="active" (click)="closeMenu()">
+              <i class="fas fa-plug"></i> &nbsp;SMPS
+            </button>
+            <button mat-menu-item routerLink="/product/software/dairy-erp" routerLinkActive="active" (click)="closeMenu()">
+              <i class="fas fa-industry"></i> &nbsp;Dairy ERP
+            </button>
+            <button mat-menu-item routerLink="/product/software/sdms" routerLinkActive="active" (click)="closeMenu()">
+              <i class="fas fa-database"></i> &nbsp;SDMS
+            </button>
+            <button mat-menu-item routerLink="/product/software/pos" routerLinkActive="active" (click)="closeMenu()">
+              <i class="fas fa-cash-register"></i> &nbsp;Software POS
+            </button>
+          </mat-menu>
+
+          <mat-menu #hardwareMenu="matMenu" panelClass="custom-menu-width">
+            <button mat-menu-item routerLink="/product/hardware/milk-analyzer" (click)="closeMenu()">
+              <i class="fas fa-tint"></i> &nbsp;Milk Analyzer
+            </button>
+            <button mat-menu-item routerLink="/product/hardware/pos-machine" (click)="closeMenu()">
+              <i class="fas fa-cash-register"></i> &nbsp;POS Machine
+            </button>
+            <button mat-menu-item routerLink="/product/hardware/electronic-weight" (click)="closeMenu()">
+              <i class="fas fa-weight-scale"></i> &nbsp;Electronic Weight
+            </button>
+            <button mat-menu-item routerLink="/product/hardware/amcs" (click)="closeMenu()">
+              <i class="fas fa-network-wired"></i> &nbsp;Automatic Milk Collection System (AMCS)
+            </button>
+          </mat-menu>
+
+          
+
+          <li>
+            <button mat-button [matMenuTriggerFor]="AbouttMenu" style="color: #e7b1b1;">
+              <i class="fas fa-address-card"></i> &nbsp;About
+            </button>
+          </li>
+          
+          <mat-menu #AbouttMenu="matMenu" panelClass="custom-menu-width">
+            <button mat-menu-item routerLink="/about/missionandvision" (click)="closeMenu()">
+              <i class="fas fa-bullseye"></i> &nbsp;Mission And Vision
+            </button>
+            <button mat-menu-item routerLink="/about/ourteam" (click)="closeMenu()">
+              <i class="fas fa-user-tie"></i>  &nbsp;Our Team
+            </button>
+            <button mat-menu-item routerLink="/about/carrer" (click)="closeMenu()">
+              <i class="fas fa-briefcase"></i> &nbsp;Careers 
+            </button>
+        
+          </mat-menu>
+
+          <li>
+            <button routerLink="/gallery" routerLinkActive="active" (click)="closeMenu()" mat-button style="color: #e7b1b1;">
+              <i class="fas fa-images"></i>  &nbsp;Gallery
+            </button>
+          </li>
+          <li>
+            <button routerLink="/Services" routerLinkActive="active" (click)="closeMenu()" mat-button style="color: #e7b1b1;">
+              <i class="fas fa-tools"></i>  &nbsp;Services
+            </button>
+          </li>
+
+       
+          
+        
+          <li>
+            <button routerLink="/Contact" routerLinkActive="active" (click)="closeMenu()" mat-button style="color: #e7b1b1;">
+              <i class="fas fa-address-card"></i> &nbsp;Contact
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

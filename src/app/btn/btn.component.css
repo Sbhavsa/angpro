@@ -1,0 +1,41 @@
+.download-section {
+    display: flex;
+    flex-direction: column;  /* Stack buttons on mobile */
+    gap: 1rem;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Centers buttons vertically */
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .download-section {
+        flex-direction: row; /* Align buttons in a row on larger screens */
+        width: 50rem;
+        gap: 1rem;
+        justify-content: center; /* Ensures buttons are centered in row layout */
+    }
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #9c8686;
+    background-color: #b29191;
+    color: black;
+    font-weight: 500;
+    font-size: 0.875rem;
+    width: 15rem; 
+    padding: 10px 20px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #ac2a99;
+    border-color: white;
+    color: white;
+}

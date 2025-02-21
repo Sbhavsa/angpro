@@ -94,6 +94,9 @@
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: bold;
+    display: block;
+    align-items: center;
+    left: 10px;
 }
 
 .footer-column ul {
@@ -104,11 +107,16 @@
 .footer-column ul li {
     font-size: 14px;
     margin: 5px 0;
+    display: block;
 }
 
 .footer-column ul li a {
     color: #2a2424;
     text-decoration: none;
+    text-align: left;
+    display: inline-block;
+    font-weight: 250;
+  
 }
 
 .footer-bottom {
@@ -152,3 +160,5 @@
     color: #e7b1b1;
     cursor: pointer;
 }
+
+

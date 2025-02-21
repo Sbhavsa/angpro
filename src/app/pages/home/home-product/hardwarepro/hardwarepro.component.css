@@ -1,0 +1,119 @@
+.banner-container {
+    position: relative;
+    height: 52%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    
+
+  }
+  
+  .banner-image {
+    display: none;
+  }
+  
+  @media (min-width: 640px) {
+    .banner-image {
+      display: block;
+      background-size: cover;
+      object-fit: cover;
+      background-position: center;
+      height: 24rem; /* Equivalent to sm:h-96 */
+      width: 100%;
+    }
+  }
+  
+  .banner-text {
+    position: absolute;
+    top: 33%;
+    left: 3.5rem; /* Equivalent to left-14 */
+  }
+  
+  .banner-title {
+    font-size: 3rem; /* Equivalent to text-6xl */
+    font-weight: bold;
+    color: #9c8686;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Overall container settings */
+.content-area {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+
+  /* Inner styling */
+  .content-area .promoitem .inner {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  
+  .content-area .promoitem .fbox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .content-area .promoitem .fitem {
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .content-area .promoitem .innerFboxFItem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .content-area .promoitem .innerFboxFItem h3.ultra {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .content-area .promoitem .innerFboxFItem p {
+    color: #666;
+  }
+  
+
+  
+  .content-area .promoitem .innerFboxFItem a.btnBasic:hover {
+    background-color: #9c8686;
+  }
+  
+  .content-area .promoitem .innerFboxFItem p.legal {
+    font-size: 0.75rem;
+    color: #999;
+  }
+  
+  /* Image box size settings */
+  .content-area .promoitem .innerFboxFItem img {
+    max-width: 100%;   /* Responsive image sizing */
+    height: auto;
+    /* Or use fixed dimensions:
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    */
+  }
+  

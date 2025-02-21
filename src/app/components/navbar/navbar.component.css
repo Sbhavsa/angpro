@@ -22,6 +22,8 @@
 
 .menu {
   margin: 12px 0px;
+  background-color: #9c8686;
+  
 }
 
 .menu ul {
@@ -40,17 +42,18 @@
 li {
   list-style-type: none;
   display: inline-block;
-}
-
-a {
-  color: white;
-  text-decoration: none;
   font-size: 18px;
+}
+a,
+button {
+  color: #e7b1b1;
+  text-decoration: none;
+  font-size:18px;
   margin-left: 24px;
   font-weight: bold;
 }
 
-a:hover {
+a , button:hover {
   color: #e7b1b1;
   cursor: pointer;
   transition: 0.4s ease-in-out;
@@ -64,6 +67,12 @@ a:hover {
 .logo img {
   max-height: 50px;
 }
+.mat-menu-panel {
+  background-color: #9c8686; /* Desired background color */
+  color: white; /* Text color */
+
+}
+
 
 /* Tablets (Between 600px and 999px) */
 @media only screen and (max-width: 999px) {
@@ -71,7 +80,6 @@ a:hover {
   .menu {
       position: fixed;
       right: -200px;
-    
       width: 180px;
       height: 203px;
       background-color: #9c8686;
@@ -123,6 +131,7 @@ a:hover {
       transform: rotate(-40deg);
       margin-top: -3px;
   }
+
 
   .menuclass {
       right: 0;
@@ -201,3 +210,34 @@ a:hover {
       transition: 0.3s ease-in-out;
   }
 }
+
+
+
+/* Ensure the mat-menu uses your theme's background color */
+::ng-deep .mat-menu-panel {
+  background-color: #9c8686; /* Matches the header background */
+  color: white; /* Text color */
+}
+
+/* Style menu items */
+::ng-deep .mat-menu-item {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+/* Hover effect for menu items */
+::ng-deep .mat-menu-item:hover {
+  background-color: #e7b1b1;
+  color: #000;
+}
+
+/* Ensure the dropdown menu appears above other content */
+::ng-deep .cdk-overlay-pane {
+  z-index: 1000;
+}
+
+
+ .mat-mdc-menu-content{
+  background-color: #9c8686;
+ }

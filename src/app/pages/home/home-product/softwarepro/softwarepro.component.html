@@ -1,0 +1,36 @@
+<div id="top"></div>
+<div class="banner-container">
+  <img src="Software-Solution-Banner.jpg" alt="Software &amp; Solution Banner" class="banner-image" />
+  <div class="banner-text">
+    <span class="banner-title">Software &amp; Solution</span>
+  </div>
+</div>
+
+<!-- Apply the list animation to the content area -->
+<div class="content-area" [@listAnimation]>
+  <div class="item promoitem" *ngFor="let item of toutItems" [@promoAnimation]>
+    <div class="contents">
+      <div class="inner btnLightbg">
+        <div class="fbox" role="list">
+          <div class="fitem dustGreyBg" role="listitem">
+            <div class="innerFbox">
+              <div class="innerFboxFItem">
+                <img [src]="item.image" alt="not show">
+                <h3 class="ultra" [id]="item.headingId">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+              <div class="innerFboxFItem">
+
+                <a [routerLink]="item.link" class="btnBasic btnSecond"
+                  [attr.aria-labelledby]="item.headingId + ' ' + item.linkId" [id]="item.linkId">
+                  {{ item.linkText }}
+                </a>
+                <p class="legal" *ngIf="item.legal">{{ item.legal }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

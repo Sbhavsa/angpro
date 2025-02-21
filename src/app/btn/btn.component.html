@@ -1,0 +1,16 @@
+<div class="download-section show">
+    <div>
+      <button class="download-btn" (click)="downloadFile(brochureUrl, brochureName)">
+        <span class="material-symbols-outlined"> <i class="fa-solid fa-download download-icon"></i> &nbsp;</span>
+        {{ brochureLabel }}
+      </button>
+    </div>
+  
+    <div>
+      <a [href]="appDownloadUrl" target="_blank" class="download-btn">
+        <span class="material-symbols-outlined"> <i class="fa-solid fa-download download-icon"></i> &nbsp; </span>
+        {{ appDownloadLabel }}
+      </a>
+    </div>
+  </div>
+  

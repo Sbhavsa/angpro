@@ -1,13 +1,11 @@
-<section class="card-content-section card-content-carousel-section section-wrapper">
+<section *ngIf="showCarousel" class="card-content-section card-content-carousel-section section-wrapper">
     <div class="text-header-inner card-content-section-header">
         <div class="text-group text-group-alignment-start">
             <div>
                 <h2 class="text-group-headline">LATEST PRODUCTS</h2>
-
-                <p class="scroll-animate">Software development outsourcing is just a tool to achieve business goals. But
-                    there is no way to get worthwhile results without cooperation and trust between a client company.
+                <p class="scroll-animate">
+                    Software development outsourcing is just a tool to achieve business goals. But there is no way to get worthwhile results without cooperation and trust between a client company.
                 </p>
-
             </div>
         </div>
     </div>
@@ -17,20 +15,16 @@
             <div>
                 <div class="carousel-track-container">
                     <div class="carousel-track">
-                        <div *ngFor="let slide of slides; let i = index" class="carousel-slide"
-                            [ngStyle]="{'background-image': slide.backgroundImage}">
-                            <a [href]="slide.link" target="_self" class="carousel-item">
+                        <div *ngFor="let slide of slides; let i = index" class="carousel-slide" [ngStyle]="{'background-image': slide.backgroundImage}">
+                            <a (click)="onclick(slide.link)"  target="_self" class="carousel-item">
                                 <div class="text-group">
                                     <h3 class="text-group-headline1">{{ slide.title }}</h3>
                                 </div>
                                 <div class="card-content-section-item-arrow-section">
                                     <span class="arrow-icon">
-                                        <svg class="arrow-icon-arrow" viewBox="0 0 28 17"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M26 8.01221H1" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round"></path>
-                                            <path d="M19.5 1.01221L26.5 8.01221L19.5 15.0122" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <svg class="arrow-icon-arrow" viewBox="0 0 28 17" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M26 8.01221H1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M19.5 1.01221L26.5 8.01221L19.5 15.0122" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg>
                                     </span>
                                 </div>
@@ -38,9 +32,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </section>
+
+<!-- Child components will be loaded here -->
+<router-outlet></router-outlet>

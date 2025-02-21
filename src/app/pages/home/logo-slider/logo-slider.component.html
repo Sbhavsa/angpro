@@ -1,8 +1,11 @@
 
-<div class="container">
-    <div class="slider">
+<div class="container" style="width: 100% !important;">
+    <div class="slider" style="width: 100% !important;">
       <div class="slide-track">
         <!-- Render each logo using *ngFor -->
+        <div class="slide" *ngFor="let logo of logos">
+          <img [src]="logo.src" [alt]="logo.alt" />
+        </div>
         <div class="slide" *ngFor="let logo of logos">
           <img [src]="logo.src" [alt]="logo.alt" />
         </div>
